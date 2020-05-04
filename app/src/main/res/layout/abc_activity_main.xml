@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <ImageButton
+            android:id="@+id/record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/record"
+            android:src="@drawable/ic_action_record"
+            android:text="@string/record" />
+
+
+        <ImageButton
+            android:id="@+id/animate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/animate"
+            android:src="@drawable/animation"
+            android:text="@string/animate" />
+
+        <ImageButton
+            android:id="@+id/raz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/raz"
+            android:src="@drawable/ic_action_raz"
+            android:text="@string/raz" />
+
+        <ImageButton
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/track_title"
+            android:src="@drawable/ic_action_tracks"
+            android:text="@string/track_title" />
+
+
+        <ImageButton
+            android:id="@+id/convert"
+            android:layout_width="62dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/convert"
+            android:src="@mipmap/ic_converter_foreground"
+            android:text="@string/convert" />
+
+        <ImageButton
+            android:id="@+id/AudioRecord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/AudioRecord"
+            android:src="@drawable/ic_action_recording_audio_stop"
+            android:text="@string/AudioRecord" />
+
+        <ImageButton
+            android:id="@+id/stopAudioRecord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/stopAudioRecording"
+            android:src="@drawable/recording_audio_stop"
+            android:text="@string/stopAudioRecording" />
+
+        <ImageButton
+            android:id="@+id/overflow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/overflow"
+            android:src="@drawable/ic_action_overflow"
+            android:text="@string/overflow" />
+
+
+    </LinearLayout>
+
+
+    <com.RunTimeTerror.Musicorum.views.PianoView
+        android:id="@+id/Musicorum"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp" />
+</RelativeLayout>

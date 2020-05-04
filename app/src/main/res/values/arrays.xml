@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tracks">
+        <item>@string/papa_noel</item>
+        <item>@string/clair_lune</item>
+        <item>@string/frere_jacques</item>
+        <item>@string/meunier_dors</item>
+        <item>@string/fais_dodo</item>
+        <item>@string/hymne_joie</item>
+        <item>@string/la_marseillaise</item>
+        <item>@string/claire_fontaine</item>
+        <item>@string/happy_birthday</item>
+        <item>@string/bon_tabac</item>
+        <item>@string/merry_christmas</item>
+        <item>@string/when_saints</item>
+        <item>@string/love_tender</item>
+        <item>@string/jingle_bells</item>
+    </string-array>
+</resources>

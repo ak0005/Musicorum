@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <ImageButton
+        android:id="@+id/volume_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="22.5dp"
+        android:contentDescription="@string/volume_down"
+        android:src="@drawable/ic_action_volume_down"
+        android:text="@string/volume_down" />
+
+    <ImageButton
+        android:id="@+id/volume_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="22.5dp"
+        android:contentDescription="@string/volume_up"
+        android:src="@drawable/ic_action_volume_up"
+        android:text="@string/volume_up" />
+
+    <ImageButton
+        android:id="@+id/list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="22.5dp"
+        android:contentDescription="@string/list"
+        android:src="@drawable/ic_action_list"
+        android:text="@string/list" />
+
+    <ImageButton
+        android:id="@+id/import_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/import_record"
+        android:src="@drawable/ic_action_tracks_import"
+        android:text="@string/import_record" />
+
+
+</LinearLayout>

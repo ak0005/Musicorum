@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialogLayoutRoot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/import_record_suggestion"
+            android:layout_width="68dp"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/import_record"
+            android:src="@drawable/ic_action_tracks_import_suggestion" />
+
+        <ImageButton
+            android:id="@+id/share_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:contentDescription="@string/share"
+            android:src="@drawable/ic_share" />
+    </LinearLayout>
+</LinearLayout>
