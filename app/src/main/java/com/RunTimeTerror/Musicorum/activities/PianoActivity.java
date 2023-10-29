@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Build.VERSION;
 import android.os.Bundle;
@@ -30,9 +31,9 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.afollestad.materialdialogs.MaterialDialog.Builder;
 import com.afollestad.materialdialogs.MaterialDialog.ListCallback;
 import com.afollestad.materialdialogs.MaterialDialog.SingleButtonCallback;
-import com.chaquo.python.PyObject;
-import com.chaquo.python.Python;
-import com.chaquo.python.android.AndroidPlatform;
+//import com.chaquo.python.PyObject;
+//import com.chaquo.python.Python;
+//import com.chaquo.python.android.AndroidPlatform;
 import com.obsez.android.lib.filechooser.ChooserDialog;
 
 import java.io.BufferedReader;
@@ -44,6 +45,7 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Objects;
 
 import static com.RunTimeTerror.Musicorum.model.Track.trackNames;
 
@@ -325,19 +327,19 @@ public class PianoActivity extends AppCompatActivity {
                 .show();
     }
 
-    private void notesExtracterHelper(final PyObject notes) {
-        ArrayList<Integer> keys = new ArrayList<>();
-        for (PyObject x : notes.asList()) {
-            String s = x.repr().substring(1, x.repr().length() - 1);
-            System.out.print(s + " ");
-            if (keyMap.containsKey(s)) {
-                keys.add(keyMap.get(s));
-                System.out.println(keyMap.get(s) + " ");
-            } else {
-                System.out.println("Not present\n");
-            }
-        }
-        addTrack(keys);
+    private void notesExtracterHelper(final Object notes) {
+//        ArrayList<Integer> keys = new ArrayList<>();
+//        for (PyObject x : notes.asList()) {
+//            String s = x.repr().substring(1, x.repr().length() - 1);
+//            System.out.print(s + " ");
+//            if (keyMap.containsKey(s)) {
+//                keys.add(keyMap.get(s));
+//                System.out.println(keyMap.get(s) + " ");
+//            } else {
+//                System.out.println("Not present\n");
+//            }
+//        }
+//        addTrack(keys);
     }
 
     private boolean checkIfTrackExists(String obj) {
@@ -518,7 +520,7 @@ public class PianoActivity extends AppCompatActivity {
     }
 
     public void manageBtnOverflow() {
-        View customView = new Builder(this).title(R.string.toolsbar).customView(R.layout.toolsbar, true).positiveText(17039370).show().getCustomView();
+        View customView = new Builder(this).title(R.string.toolsbar).customView(R.layout.toolsbar, true).positiveText(Integer.valueOf(17039370)).show().getCustomView();
 
         ImageButton imageButton = customView.findViewById(R.id.volume_up);
         imageButton.setOnClickListener(new OnClickListener() {
@@ -753,7 +755,7 @@ public class PianoActivity extends AppCompatActivity {
         if (VERSION.SDK_INT < 23) {
             return false;
         }
-        if (checkSelfPermission(str) != 0) {
+        if (checkSelfPermission(str) != PackageManager.PERMISSION_GRANTED) {
             z = false;
         }
         return !z;
@@ -844,7 +846,7 @@ public class PianoActivity extends AppCompatActivity {
     private class AsyncTaskRunner extends AsyncTask<String, String, String> {
 
         ProgressDialog progressDialog;
-        PyObject notes;
+       // PyObject notes;
         String name;
         boolean without_error = true;
 
@@ -852,13 +854,13 @@ public class PianoActivity extends AppCompatActivity {
         protected String doInBackground(String... obj) {
             publishProgress("Processing..."); // Calls onProgressUpdate()
             try {
-                if (!Python.isStarted()) {
-                    Python.start(new AndroidPlatform(PianoActivity.this));
-                }
-                name = obj[0];
-                Python python = Python.getInstance();
-                PyObject pythonFile = python.getModule("single_file");
-                notes = pythonFile.callAttr("all_final", name);
+//                if (!Python.isStarted()) {
+//                    Python.start(new AndroidPlatform(PianoActivity.this));
+//                }
+//                name = obj[0];
+//                Python python = Python.getInstance();
+//                PyObject pythonFile = python.getModule("single_file");
+//                notes = pythonFile.callAttr("all_final", name);
             } catch (Exception e) {
                 without_error = false;
             }
@@ -869,7 +871,7 @@ public class PianoActivity extends AppCompatActivity {
         protected void onPostExecute(String result) {
             progressDialog.dismiss();
             if (without_error) {
-                PianoActivity.this.notesExtracterHelper(notes);
+                //PianoActivity.this.notesExtracterHelper(notes);
             } else {
                 Toast.makeText(PianoActivity.this, "Unable to process", Toast.LENGTH_LONG).show();
             }
